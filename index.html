@@ -1,17 +1,57 @@
-
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8">
-  <title>Trang Web Đơn Giản</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lời Chúc Mừng Tuyệt Đẹp Ngày 20/10</title>
+    <!-- Tải Tailwind CSS để tạo kiểu dáng responsive và đẹp mắt -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Liên kết tới file CSS riêng biệt -->
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
-  <div class="container">
-    <h1>Xin chào!</h1>
-    <p>Đây là trang web đầu tiên của tôi trên GitHub Pages.</p>
-    <button onclick="chaoBan()">Bấm vào tôi</button>
-  </div>
+<body class="min-h-screen flex items-center justify-center p-4">
+    <!-- Hiệu ứng cánh hoa đào rơi (sẽ được tạo trong JS và CSS) -->
+    <div class="petals" id="petal-container"></div>
 
-  <script src="script.js"></script>
+    <!-- Container chính -->
+    <div class="main-card bg-white p-8 md:p-12 rounded-3xl shadow-2xl max-w-lg w-full text-center border-t-8 border-pink-400">
+
+        <!-- Header và Tiêu đề -->
+        <header class="mb-8">
+            <h1 class="text-5xl font-extrabold text-pink-600 mb-2 tracking-wider">🌺 20/10 🌺</h1>
+            <p class="text-2xl text-gray-700 font-semibold italic">Phụ Nữ Việt Nam - Yêu Thương và Hạnh Phúc!</p>
+        </header>
+
+        <!-- Khu vực hiển thị hình ảnh động -->
+        <div class="mb-8 flex justify-center image-container">
+            <!-- Sử dụng hình ảnh bạn vừa gửi, lưu tên là chuc_mung_20_10_chinh.png -->
+            <img 
+                id="main-image"
+                src="chuc_mung_20_10_chinh.png" 
+                alt="Thiệp chúc mừng Phụ Nữ Việt Nam 20/10 (Nhấn vào ảnh để xem hiệu ứng)" 
+                class="w-full max-w-xs rounded-xl transform hover:scale-[1.03] transition duration-300"
+                onerror="this.onerror=null; this.src='https://placehold.co/300x300/fcc2d3/9f1239?text=20/10+MAIN+IMAGE';" 
+            >
+        </div>
+
+        <!-- Nút bấm tương tác -->
+        <button 
+            id="wishButton" 
+            class="btn-primary bg-pink-500 text-white py-4 px-10 rounded-full font-extrabold text-xl transition duration-300 ease-in-out transform hover:bg-pink-600 focus:outline-none focus:ring-4 focus:ring-pink-300 active:scale-95 shadow-xl"
+        >
+            💖 Mở Lời Chúc May Mắn 💖
+        </button>
+
+        <!-- Vùng hiển thị thông báo/lời chúc -->
+        <div id="messageDisplay" class="mt-8 p-6 bg-pink-50 border-4 border-pink-300 text-gray-800 rounded-xl text-left shadow-inner hidden">
+            <p class="text-xl italic font-medium"></p>
+        </div>
+        
+    </div>
+
+    <!-- Liên kết tới file JavaScript riêng biệt -->
+    <script src="script.js"></script>
 </body>
+</html>
